@@ -12,7 +12,7 @@ define findec2::generate (
 
   include findec2
 
-  $cmd_start = "/usr/bin/find-ec2 --tagname ${tagname} --tagvalue ${tagvalue} --ownazweight ${ownweight}"
+  $cmd_start = "/usr/bin/find-ec2 --name ${name} --tagname ${tagname} --tagvalue ${tagvalue} --ownazweight ${ownweight}"
   if ($dummy) { $cmd_middle = "${cmd_start} --dummy" }
   else { $cmd_middle = $cmd_start }
 
