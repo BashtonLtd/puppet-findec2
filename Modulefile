@@ -1,0 +1,8 @@
+name          'bashtoni-findec2'
+version       '0.0.1'
+source        'UNKNOWN'
+author        'Sam Bashton'
+license       'Apache License, Version 2.0'
+summary       'UNKNOWN'
+description   'UNKNOWN'
+project_page  'UNKNOWN'
