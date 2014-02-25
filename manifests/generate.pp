@@ -24,4 +24,12 @@ define findec2::generate (
     user    => root,
     minute  => "*/${frequency}",
   }
+
+  # Immediately run the cron job; some services (eg Varnish) cannot be started
+  # if the included file doesn't exist
+  exec { $name:
+    command => $cmd_final,
+    creates => $output,
+    require => Class['findec2'],
+  }
 }
