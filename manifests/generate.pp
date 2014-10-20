@@ -7,13 +7,14 @@ define findec2::generate (
   $tagvalue  = 'web',
   $ownweight = '99999',
   $dummy     = false,
+  $dummyhost = 'dummy',
   $service   = undef ) {
 
 
   include findec2
 
   $cmd_start = "/usr/bin/find-ec2 --name ${name} --tagname ${tagname} --tagvalue ${tagvalue} --ownazweight ${ownweight}"
-  if ($dummy) { $cmd_middle = "${cmd_start} --dummy" }
+  if ($dummy) { $cmd_middle = "${cmd_start} --dummy --dummyhostname ${dummyhost}" }
   else { $cmd_middle = $cmd_start }
 
   if ($service) { $cmd_final = "${cmd_middle} --notify ${service} ${template} ${output}" }
