@@ -3,7 +3,10 @@
 # This class is meant to be called from findec2
 # It sets variables according to platform
 #
-class findec2::params {
+class findec2::params (
+  $package_ensure = 'present'
+) {
+
   case $::osfamily {
     'RedHat', 'Amazon': {
       $package_name = 'find-ec2'
