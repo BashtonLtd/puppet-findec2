@@ -3,8 +3,7 @@ define findec2::generate (
   $template,
   $output,
   $frequency = 5,
-  $tagname   = 'machinetype',
-  $tagvalue  = 'web',
+  $tags      = 'Service=Web',
   $ownweight = '99999',
   $dummy     = false,
   $dummyhost = 'dummy',
@@ -13,7 +12,7 @@ define findec2::generate (
 
   include findec2
 
-  $cmd_start = "/usr/bin/find-ec2 --name ${name} --tagname ${tagname} --tagvalue ${tagvalue} --ownazweight ${ownweight}"
+  $cmd_start = "/usr/bin/find-ec2 --name ${name} --tags ${tags} --ownazweight ${ownweight}"
   if ($dummy) { $cmd_middle = "${cmd_start} --dummy --dummyhostname ${dummyhost}" }
   else { $cmd_middle = $cmd_start }
 
